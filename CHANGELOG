@@ -1,0 +1,762 @@
+07/16/2025 v9.6.0
+
+* Fixes issue when sending markdown reports to stdout. Thanks @kingbuzzman! [PR 516](https://github.com/Bachmann1234/diff_cover/pull/516)
+* Support for github annotations! Thanks @timkrins [PR 432](https://github.com/Bachmann1234/diff_cover/pull/432)
+
+07/09/2025 v9.5.0
+
+* Adds clang-format quality check (Thanks @mg-cloud) [PR 511](https://github.com/Bachmann1234/diff_cover/pull/511)
+
+06/23/2025 v9.4.1
+
+* Update to LCOV to support pytest-cov. Pytest-cov uses an obsolute lcov format that needed additional handling. [PR 505](https://github.com/Bachmann1234/diff_cover/pull/505) Thanks @129tyc
+
+06/22/2025 v9.4.0
+
+* Many improvements to internal structure, dependencies, and tests. (Thanks @kingbuzzman)
+     * [PR 491](https://github.com/Bachmann1234/diff_cover/pull/491)
+     * [PR 492](https://github.com/Bachmann1234/diff_cover/pull/492)
+     * [PR 494](https://github.com/Bachmann1234/diff_cover/pull/494)
+     * [PR 495](https://github.com/Bachmann1234/diff_cover/pull/495)
+     * [PR 496](https://github.com/Bachmann1234/diff_cover/pull/496)
+     * [PR 497](https://github.com/Bachmann1234/diff_cover/pull/497)
+     * [PR 498](https://github.com/Bachmann1234/diff_cover/pull/498)
+     * [PR 501](https://github.com/Bachmann1234/diff_cover/pull/501)
+     * [PR 502](https://github.com/Bachmann1234/diff_cover/pull/502)
+
+* You can now use stdout and stderr when using --format [PR 500](https://github.com/Bachmann1234/diff_cover/pull/500) (Thanks @kingbuzzman)
+
+* Significant enhancements to LCOV parsing! [PR 493](https://github.com/Bachmann1234/diff_cover/pull/493) (Thanks @129tyc)
+
+06/01/2025 v9.3.2
+
+* Fix --format with paths containing colons. [PR 484](https://github.com/Bachmann1234/diff_cover/pull/484) thanks @tkukushkin
+
+05/25/2025 v9.3.1
+
+* Loosens the python requirement in diff cover so people using it as a dependency are not restricted to one specific python version
+
+05/24/2025 v9.3.0
+
+* Resolves deprecation warning around regexes. [PR 452](https://github.com/Bachmann1234/diff_cover/pull/452) thanks @emmanuel-ferdman!
+
+* Improvements to coverage, test, performance, test quality. Huge improvemetns to how this projects tests.  [PR 454](https://github.com/Bachmann1234/diff_cover/pull/454) [PR 456](https://github.com/Bachmann1234/diff_cover/pull/456)
+[PR 459](https://github.com/Bachmann1234/diff_cover/pull/459) [PR 465](https://github.com/Bachmann1234/diff_cover/pull/465) [PR 468](https://github.com/Bachmann1234/diff_cover/pull/468)
+[PR 466](https://github.com/Bachmann1234/diff_cover/pull/466/files) [PR 476](http://github.com/Bachmann1234/diff_cover/pull/476) [PR 458](https://github.com/Bachmann1234/diff_cover/pull/458) [PR 462](https://github.com/Bachmann1234/diff_cover/pull/462) Thanks @kingbuzzman!
+
+* Removes/updates some deprecated code [PR 469](https://github.com/Bachmann1234/diff_cover/pull/469) [PR 455](https://github.com/Bachmann1234/diff_cover/pull/455) [PR 480](https://github.com/Bachmann1234/diff_cover/pull/480/files) Thanks @kingbuzzman!
+
+* Adds Ruff Support! [PR 463](https://github.com/Bachmann1234/diff_cover/pull/463) Closes [Issue 362](https://github.com/Bachmann1234/diff_cover/issues/362)
+
+
+03/08/2025 v9.2.4
+
+* Improves handling of escaped characters in untracked files. [PR 440](https://github.com/Bachmann1234/diff_cover/pull/440) Thanks @buermarc!
+
+02/18/2025 v9.2.3
+
+* Bumps some dev dependencies and updates tests to support pygments 2.18.0
+
+01/30/2025 v9.2.2
+
+* Fix files only covered by one LCOV report showing 100% coverage [PR #433](https://github.com/Bachmann1234/diff_cover/pull/433) Thanks @matsjoyce-refeyn!
+
+12/13/2024 v9.2.1
+
+* Adds python 3.13 support [PR #427](https://github.com/Bachmann1234/diff_cover/pull/427) Thanks @ssbarnea
+* Drops python 3.8 support
+
+09/07/2024 v9.2.0
+
+* adds expand-coverage-report to options. This helps with ensures the tool contains lines that may have been missed due to how things reported in the original report [PR 416](https://github.com/Bachmann1234/diff_cover/pull/416)
+
+* Adds VER directive for LCov reports [PR 414](https://github.com/Bachmann1234/diff_cover/pull/414) thanks @esuldin
+
+
+07/17/2024 v9.1.1
+
+* Fixes issue where binary files could cause diff-cover to crash (Thanks @MihailPereverza) [PR 413](https://github.com/Bachmann1234/diff_cover/pull/413) [Issue 412](https://github.com/Bachmann1234/diff_cover/issues/412)
+
+06/25/2024 v9.1.0
+
+* Adds the ability to pass in a diff rather than use git to create one. Thanks @Jsostmann [PR 410](https://github.com/Bachmann1234/diff_cover/pull/410)
+
+04/14/2024 v9.0.0
+
+* Adds line numbers to the markdown snippets (and error indicators). Bumped major version as the format of the report changed in a significant way in this change (Thanks @walles!)  [PR 399](https://github.com/Bachmann1234/diff_cover/pull/399)
+
+01/20/2024 v8.0.3
+
+* Fixes paths not being properly normalized when accessing the diff violations. Potentially fixing issues with users using diff quality in windows. [#388](https://github.com/Bachmann1234/diff_cover/pull/388) Thanks @mrcool4 for the PR!
+
+12/16/2023 v8.0.2
+
+* Improved error handling when a command is not found [#381](https://github.com/Bachmann1234/diff_cover/pull/380) Thanks @dperl-dls
+
+11/13/2023 v8.0.1
+
+* Normalize LCOV source paths [#373](https://github.com/Bachmann1234/diff_cover/pull/373) (Thanks! @matsjoyce-refeyn)
+
+10/14/2023 v8.0.0
+
+* Declares python 3.12 support (no code changes required)
+* Drops python 3.7 support
+* Various dependabot dependency updates
+
+07/14/2023 v7.7.0
+
+* Adds the --include option from diff-quality to diff cover. Thanks @cameronbrill [PR 355](https://github.com/Bachmann1234/diff_cover/pull/355)
+
+07/12/2023 v7.6.1
+
+* Fixes metadata so pypi reports the license properly. Thanks for the report@snydergd [Issue 353](https://github.com/Bachmann1234/diff_cover/issues/353)
+
+06/10/2023 v7.6.0
+
+* Shellcheck support added to diff quality Thanks @mg-castel ! [PR 347](https://github.com/Bachmann1234/diff_cover/pull/347)
+
+01/24/2023 v7.5.0
+
+* JSON report will now show lines covered in a diff. Thanks @ZSmallX [PR 325](https://github.com/Bachmann1234/diff_cover/pull/325)
+
+01/24/2023 v7.4.0
+
+* Significant performance improvement when processing cobertura reports! Thanks @madest92 [PR 314](https://github.com/Bachmann1234/diff_cover/pull/314)
+
+01/18/2023 v7.3.2
+
+* Update dependencies in the lockfile, adds python 3.11 support.
+   Triggered by [Issue 310](https://github.com/Bachmann1234/diff_cover/issues/310) reported by kloczek
+
+01/18/2023 v7.3.1
+
+* Fixes case where bundled tests fail in Solaris and other OSs that dont
+support deleting the directory you are currently residing in.
+[PR 309](https://github.com/Bachmann1234/diff_cover/pull/309) Reported by
+mtelka [Issue 308](https://github.com/Bachmann1234/diff_cover/issues/308)
+
+12/09/2022 v7.3.0
+
+* Plugins now Support '--options' and report files (Thanks @barrywhart) [PR
+305](https://github.com/Bachmann1234/diff_cover/pull/305)
+
+11/30/2022 v7.2.0
+
+* Add for the ability for diff-quality report generator plugins to process
+modified files as a batch (Thanks @barrywhart) [PR
+300](https://github.com/Bachmann1234/diff_cover/pull/300)
+
+11/29/2022 v7.1.2
+
+* Remove some annoying prints (thanks @peterg79) [PR
+302](https://github.com/Bachmann1234/diff_cover/pull/302)
+
+11/28/2022 v7.1.1
+
+* Handle branch coverage in lcov reports (thanks @peterg79)
+[PR 301](https://github.com/Bachmann1234/diff_cover/pull/301)
+
+11/26/2022 v7.1.0
+
+* Native support for lcov coverage reports (thanks @peterg79) [PR
+297](https://github.com/Bachmann1234/diff_cover/pull/297)
+
+11/13/2022 v7.0.2
+
+* Ensures multiple options get passed to cpp check properly. Thanks @ptzz [Issue 293](https://github.com/Bachmann1234/diff_cover/issues/293)
+
+9/19/2022 v7.0.1
+
+* Updates dependencies and updates pylint driver to support 2.5 in a backwards
+compatible way
+* Fixes the broken tests reported in
+https://github.com/Bachmann1234/diff_cover/issues/290 Thanks @kloczek for the
+report
+
+9/19/2022 v7.0.0
+
+* Fixes issue where report name would not respoect diff notation
+https://github.com/Bachmann1234/diff_cover/issues/288 Thanks @prescod for the
+report.
+* Drops Python 3.6 (This is why I bumped the major)
+
+6/22/2022 v6.5.1
+
+* Updates lockfile and tests to work with new pygment. Resolves [#281](https://github.com/Bachmann1234/diff_cover/issues/281)
+
+PR by me however, this was first identified and worked on by @AdamWill in
+[PR-280](https://github.com/Bachmann1234/diff_cover/pull/280). I absentmindly
+stomped over that PR when I saw [Issue
+281](https://github.com/Bachmann1234/diff_cover/issues/281) come in.
+
+
+4/15/2022 v6.5.0
+
+* Fixes issues when pylint identifies a multi line issue. Issue
+[#276](https://github.com/Bachmann1234/diff_cover/issues/276) Thanks @kozlovsky
+
+3/24/2022 v6.4.5
+
+* Updates deps to allow newer Tomli versions Thanks @kasium (PR by me cuse I
+had to debug it some. He pointed out the original issue.)
+* Fix to the tests to support a new version of pygments
+* Fixed a test that was not asserting properly (thanks @kalekundert
+https://github.com/Bachmann1234/diff_cover/pull/264)
+
+12/5/2021 v6.4.4
+
+* Fixes issue where fail over was not being properly set by default. Thanks
+@kasium https://github.com/Bachmann1234/diff_cover/pull/262
+
+12/2/2021 v6.4.3
+
+* Replaces jinja-pluralize with native jinja's i18n
+[Issue 259](https://github.com/Bachmann1234/diff_cover/issues/259)
+* Some dev dep updates
+
+10/6/2021 v6.4.2
+
+* Announces python 3.10 support. No Code changes required. Mostly so pypi has
+the right metadata
+
+9/26/2021 v6.4.1
+
+* Re add tests to the *source* distribution. Should not pollute namespace this
+time. Thanks @dvzrv !
+* Only require setuptools if you are using python < 3.8
+
+9/16/2021 v6.4.0
+
+* Allows passing a root path in for ESLint with --report_root_path
+* Bump pluggy to 1.0
+Thanks @kasium for both of these!
+
+8/29/2021 v6.3.5
+
+* Including the tests dir pollutes the namespace so for now they are removed
+again
+
+8/24/2021 v6.3.4
+
+* Ensures tests are in the dist files
+
+8/19/2021 v6.3.3
+
+* Fix issue where files that start with a space will trigger a crash.
+* Fix issue where source dist had a setup.py that would not build properly
+
+8/19/2021 v6.3.2
+
+* Fix issue where untracked files that start with space would trigger a crash. (Thanks
+@kasium) Issue #242
+
+8/15/2021 v6.3.1
+
+* Fix issue with pylint and windows based file paths (thanks @kasium) Issue
+#237
+
+8/11/2021 v6.3.0
+
+* Add support for TOML based file config thanks @kasium!
+
+8/08/2021 v6.2.2
+
+* Replace setup.py with a pyproject.toml based packaging project managed by
+poetry. No user facing changes are expected
+
+7/30/2021 v6.2.1
+
+* Some minor code refactorings and and attempting to set the long description
+in pypi. Thanks @kasium!
+
+7/13/2021 v6.2.0
+
+* Adds JSON and Markdown reports for diff-quality Thanks @kasium!
+
+
+7/09/2021 v6.1.1
+
+* Undoes a change making a implemented method abstract. Turned out existing plugins depended on this.
+
+7/08/2021 v6.1.0
+
+* New flag `--include-untracked` to give people the option to run against files that are not being tracked by git currently Thanks @kasium
+* Improved handling when the user provides a report file that does not exist (the app will fail instead of just saying there were no results) Thanks @kasium
+* More progress to moving tests to pytest style tests Thanks @kasium
+* More static analysis clean up. Thanks @kasium again!
+
+Another all @kasium release!
+
+
+7/04/2021 v6.0.0
+
+* As github, gitlab, and git itself have been changing their default branch to main this release changes the default 'compare-branch' to 'main' as well. If your project is using 'master' as a default branch add the following to your build `--compare-branch origin/master`
+
+7/03/2021 v5.5.0
+
+* Migrate more stuff to pytest
+* Multiple reports can now be generated at once
+
+Thanks again to @kasium for both of these
+
+6/24/2021 v5.4.0
+
+* Some tweaks to the readme
+* Changes to how flake8 is parsed allowing diff_quality to support error codes that dont conform to the suggested 3 letter 3 digit form
+* Adds option to show snippets in the console report to help provide context for violations
+* Some tests migrated from unit test's class based approach to pytests functional approach
+
+All of these are due to @kasium Thanks for all you have done to this point!
+
+6/22/2021 v5.3.0
+
+* Adds 'num_changed_lines' to json report. Thanks @kasium https://github.com/Bachmann1234/diff_cover/issues/170
+
+6/18/2021 v5.2.0
+
+* Adds 'quiet mode' which will only print errors and failures. Flag -q thanks @kasium https://github.com/Bachmann1234/diff_cover/issues/160
+* Several internal improvement to tools and configs. Thanks @kasium !
+
+5/29/2021 v5.1.2
+
+* Fixes a bug where clover reports were not counting conditionals (Thanks for ZSmallX providing a detailed report that made fixing this easy) (https://github.com/Bachmann1234/diff_cover/issues/190)
+* Switch to github actions for CI as I ran out of free credits for travis and this job does not pay
+* Drop 'official' support for pypy3. I don't really have any reason to think pypy wont work for this project and I wanted to simplify my ci builds.
+
+5/11/2021 v5.1.1
+
+* Bug fix to in include's functionality around absolute vs reletive paths (Thanks @Kasium https://github.com/Bachmann1234/diff_cover/pull/187)
+* Some pylint fixes  (Thanks @Kasium https://github.com/Bachmann1234/diff_cover/pull/186)
+
+5/09/2021 v5.1.0
+
+* Add the --includes option for diff-quality (Thanks @kasium https://github.com/Bachmann1234/diff_cover/pull/184)
+
+3/10/2021 v5.0.1
+
+* Removing universal wheels as we do not support python 2 (thanks @nicoddemus)
+* relaxing the requirement for chardet to 3.0
+
+3/08/2021 v5.0.0
+
+* Bumping a major version as I am dropping python 3.5 support as it has been EOL for some time
+* As a consolation I am adding 3.9 to the build. The project ran on 3.9 just fine (I develop on it..) but I had not declared support
+
+3/03/2021 v4.2.3
+
+* I pinned pygments last release and that was a bit of lazieness. This releases unpins it again
+
+3/01/2021 v4.2.2
+
+* We still support python 3.5 (though we should probably drop it soon). A transitive dep dropped support for 3.5.
+  this version pins inflect
+* Pins pygments cuse updates keep breaking my overly fragile html tests"
+
+1/30/2021 v4.2.1
+
+* The fix from 4.2.0 was incorrect
+
+1/20/2021 v4.2.0
+
+* Attempts to sniff the encoding of src files before reading them in. I am resisting adding an argument to have the user specify them until I am absolutely certain its necessary
+
+1/9/2021 v4.1.1
+
+* Adds the cpp test fixtures to the manifest. No functionality changes just ensuring the packaged tests can run
+
+1/7/2021 v4.1.0
+
+* Adds markdown report rendering support (thanks @f18m !)
+
+9/22/2020 v4.0.1
+
+* No changes to logic. I goofed up the setup.py and 2.7 users are downloading diff cover 4.0 when that wont work (thanks jaraco for the fix!)
+
+
+8/31/2020 v4.0.0
+
+* Drops python 2.7 support
+* Adds option to ignore whitespace in a diff
+
+6/4/2020 v3.0.1
+
+* Updates a test around the json report that was flaking. This gets a release as some people run the tests from the packaged code
+
+6/2/2020 v3.0.0
+
+* Add Json report Thanks @ThePletch!
+* Provide different errors for environment issues and tools not being installed Thanks @ziafazal!
+* Update pyflakes regex to handle new format (I think it should still work for the older version but im bumping a major version to highlight a potentially breaking change)
+
+4/7/2020 v2.6.1
+
+* cElementTree is going to be removed in python3.9. Added some logic to handle this. Thanks @Adamwill
+
+2/8/2020 v2.6.0
+
+* Remove context lines from git diff to avoid false positives. Thans @macho !
+
+1/11/2020 v2.5.2
+
+* Droping my CD so I can sign packages again
+
+1/11/2020 v2.5.1
+
+* Just a point release to get back into the habit of signing them
+
+12/11/2019 v2.5.0
+
+ * Diff quality now has a plugin system! From now own this project will avoid adding new tools and instead direct those to become plugins instead. Perhaps we can look into moving existing tools into separate plugins over time however, currently im leaving it alone. Thank you @barrywhart (https://github.com/Bachmann1234/diff_cover/pull/128)
+
+11/20/2019 v2.4.1
+
+ * Performance improvement identifying matching source path by only computing the main src_path the one time rather than N times Thanks @gaellalire (https://github.com/Bachmann1234/diff_cover/pull/124)
+
+10/17/2019 v2.4.0
+
+ * Drop support for python 3.4 and upgrade syntax with pyupgrade. Thanks @hugovk
+ * Add support for cppcheck. Thanks @noahp
+
+6/30/2019 v2.3.0
+
+ * Add PMD xml driver Thanks @bit-ranger (https://github.com/Bachmann1234/diff_cover/pull/117)
+
+6/13/2019 v2.2.0
+
+ * Add --version flag to both commands. Shocked we never had this
+
+6/3/2019 v2.1.0
+
+ * New option that controls how the patch is obtained: `--diff-range-notation`, defaulting to `...`.
+
+   Traditionally in git-cover the symmetric difference (three-dot, "A...M") notation has been used: it includes
+   commits reachable from A and M from their merge-base, but not both, taking history in account. This includes cherry-picks
+   between A and M, which are harmless and do not produce changes, but might give inaccurate coverage false-negatives.
+
+   Two-dot range notation ("A..M") compares the tips of both trees and produces a diff. This more
+   accurately describes the actual patch that will be applied by merging A into M, even if commits have been
+   cherry-picked between branches. This will produce a more accurate diff for coverage comparison when complex
+   merges and cherry-picks are involved. Thanks @nicoddemus!
+
+ * Fix for windows users! We were not properly normalizing paths causing source lines not to line up properly. Thanks @kingchad1989
+
+5/10/2019 v2.0.1
+
+ * Ensure case is normalized on Windows when comparing paths from XML coverage report Thanks @nicoddemus!
+
+4/08/2019 v2.0.0
+
+ * Split Diff-cover and diff-quality's entry point scripts to allow them to be executed using pythons "-m" syntax
+
+3/16/2019 v1.0.7
+
+ * Fix bug where git's noprefix option would break diffcover. Thanks @beaugunderson
+
+12/17/2018 v1.0.6
+
+ * Fix bug where no source information would cause a crash https://github.com/Bachmann1234/diff-cover/issues/88 thanks @hjqgloria for the report
+
+10/26/2018 v1.0.5
+
+ * Add support for jacoco xml
+ * support multiple xml formats (any combination of cobertura, clover, jacoco) at the same time
+
+7/10/2018 v1.0.4
+
+ * Fix issue where whitespace was not trimmed pulling source file from cobertura causing a missed match
+
+6/24/2018 v1.0.3
+
+ * Support parsable output allowing emacs to use next-error and previous-error (Thanks @Glyph)
+ * Fix Tests that were breaking due to some bad versions of pycodestyle  (Thanks @Glyph)
+
+12/20/2017 v1.0.2
+
+ * Fix bug where clover uses absolute path in its xml report
+ * Fix pylint 1.8.0 compatibility: configuration file path printed to stderr
+
+12/08/2017 v1.0.1
+
+ * Add Support for clover, findbugs and checkstyle
+
+11/14/2017 v1.0.0
+
+ * Drop support for python 3.3 and 2.6
+ * Add Support for pypy3 and python 3.6
+ * Replaced pep8 with pycodestyle as the project has deprecated pep8
+ * added diff-cover level exclude files  https://github.com/Bachmann1234/diff-cover/pull/66 Thanks @agroszer
+
+7/23/2017 v0.9.12
+
+ * Add pydocstyle support PR#64 thanks @mr-c
+
+3/7/2017 v0.9.11
+
+ * Allow ignoring of staged files. Thanks @abmaonline!
+
+2/25/2017 v0.9.10
+
+  * Deflate inflated style percentages by including files that were not supported by the linters. Thanks @abmaoline
+
+8/12/2016 v0.9.9
+
+  * Fix bug where only one file was being checked in diff-quality (Issue 47) Thanks @fperrin
+  * Fix bug where diff-quality would attempt to read deleted files (Issue 48) Thanks @fperrin
+
+7/27/2016 v0.9.8
+
+  * Fixes to ESLINT to work with 2.13 THanks @bjacobel (PR 46)
+
+3/29/2016 v0.9.7
+
+  * Move logging config to main method rather than __main__. Thanks @pkaleta (PR 45)
+
+2/21/2016 v0.9.6
+
+  * Now check for tool existence by trying to run the tool rather than trying to import it. Thanks for the idea @agroszer (issue 44)
+
+2/12/2016 v0.9.5
+
+  * Fix git-diff with `mnemonicprefix` option Thanks @blueyed
+
+2/10/2016 v0.9.4
+
+  * Move logging configuration to main for better integrations with people importing the tool. Thanks @agroszer for reporting the issue
+
+2/9/2016 v0.9.3
+
+  * Make it so you can run help without being in a git repository thanks @dashea!
+
+2/8/2016 v0.9.2
+
+  * CSS template was not being installed properly
+
+2/8/2016 v0.9.1
+
+  * Misc bugfixes. Thanks @davidkostyszak and @mgedmin
+
+2/7/2016 v0.9.0
+
+  * Add support for specifying an external css file (thanks mgedmin)
+  * Add ESLint driver (thanks agroszer)
+  * Significant reworking of diff-quality to simplify the addition of drivers and potentially
+    allow a plugin system down the line. Something I would like to finish at some point but honestly I am just not seeing the time opening up in the short term. If anyone reading this wants to give it a go +1 to that.
+
+  Special thanks to Ben Patterson for taking some time to add some QA resources to this release
+
+12/17/2015 v0.8.6
+
+  * Fix for windows users trying to run app (thanks @evanunderscore)
+  * Fix handing source paths that contain spaces (thanks @backupproject for pointing out the bug)
+
+12/01/2015 v0.8.5
+
+  * Drop lazy to fully support python 3.5 (Thanks @dashea for pointing out the issue)
+
+11/24/2015 v0.8.4
+
+  * fix diff-cover when color.ui=always is set on git thanks @Dundee
+
+10/22/2015 v0.8.3
+
+  * Fix diff-quality when installed under a folder containing 'diff-cover' (Thanks @faulkner)
+
+9/16/2015 v0.8.2
+
+   * Fix handling of windows paths in cobertura files. Thanks to @evanunderscore for catching and reviewing this bug
+      catching several flaws in my attempts to deal with this :-D
+
+9/12/2015 v0.8.1
+
+   * Fix the main method to still execute in windows. Thanks to @evanunderscore for catching this bug
+
+6/1/2015 v0.8.0
+
+   * Add JSHint to diff-quality. Thanks @benpatterson
+
+5/7/2015 v0.7.6.1
+
+   * Fix readme syntax so diff-cover looks prettier on pypy. Thanks @mblayman
+
+4/1/2015 v0.7.6
+
+   * Add support for some additional Flake8 lugins thanks @dreamwalker
+
+
+3/7/2015 v0.7.5
+
+   * Ensure all sources are captured when dealing with non python cobertura files. Thanks @jfairley
+   * Suppress error output on tests when that output is expected
+   * Adds posargs to allow you to configure test runs more easily. Thanks @nedbat
+
+2/4/2015 v0.7.4
+
+   * Fixed bug in pylint support around duplciate code issues
+   * Added ability to ignore unstaged changes Thanks DanCardin
+   * License change! We are now Apache 2.0
+   * PyPy Support now verified in tests
+   * Fix for python 2.6 support
+
+12/11/2014 v0.7.3
+
+   * Added pylint support!
+   * Fixed bug around python 1.6 and pyflakes
+   * Update Pygments allowing us to remove code we grabbed from the development branch of the project used to support python3 correctly
+
+11/6/2014 v0.7.2
+
+    * bugfix around parsing of options
+
+10/21/2014 v0.7.1
+
+    * Generating HTML report still allows STDOUT to print the regular report
+
+10/17/2014 v0.7.0
+
+    * Incorporate sources tag in corbetura reports improving diff-cover's behavior in non python codebases
+
+10/9/2014 v0.6.2
+
+    * Added log line for when diff-cover fails due to coverage being lower than the fail-under condition
+
+10/1/2014 v0.6.1
+
+    * Fixed issue where error message was not being returned after diff-quality errors
+    * Fixed issue where diff-quality would fail due to warnings.
+
+7/22/2014 v0.6.0
+
+    * Add --fail-under option
+
+7/16/2014 v0.5.7
+
+    * Remove lxml requirement speeding up builds by roughly 50%
+
+7/13/2014 v0.5.6
+
+    * Fix bug where logging was being called without being configured
+
+7/12/2014 v0.5.5
+
+    * Diff quality no longer requires every potential quality tool to be installed
+
+7/5/2014 v0.5.4
+
+    * Fix bug when writing report to stdout. Ensure that all file like objects that get passed into the report generator take bytes
+    * Run diff cover over the code in each language
+
+7/4/2014 v0.5.3
+
+    * Pluralize report output
+    * Bugfixes around git_path and unicode
+
+6/28/2014 v0.5.2
+
+    * Add snippets to quality html reports
+
+6/27/2014 v0.5.1
+
+    * Fix snippets relative path
+
+6/24/2014 v0.5.0
+
+    * Add support for Pyflakes
+
+6/13/2014 v0.4.3
+
+    * Remove dependency on iPython
+
+6/11/2014 v0.4.2
+
+    * Write report to stdout even with --html-report
+
+5/21/2014 v0.4.1
+
+    * Unicode error fixes
+    * Pass command line options to quality tool
+    * Combine adjacent lines in reports
+
+4/30/2014 v0.4.0
+
+    * Support Python 3.4
+    * Support Pylint >= 1
+
+4/19/2014 v0.3.0
+
+    * Fix relative paths
+    * Specify compare branch in a command line arg
+    * If we get an OSError on calling subprocess, display the failing command
+
+12/24/2013 v0.2.9
+
+    * Fixed another unicode bug in diff-quality for pre-generated reports.
+
+12/17/2013 v0.2.8
+
+    * Fix a unicode bug in diff-quality
+
+11/16/2013 v0.2.7
+
+    * Update requirements to use Jinja 2.7.1
+    * Remove sources list at top of report
+
+10/9/2013 v0.2.6
+
+    * Fix a bug in which unicode in source files would cause
+      an exception.
+
+10/2/2013 v0.2.5
+
+    * Added option to consume pylint/pep8 reports instead of
+      calling the tool directly.
+
+9/23/2013 v0.2.4
+
+    * Handle symbolic names in pylint output.
+
+9/4/2013 v0.2.3
+
+    * Fixed bug in parsing unicode filenames from git diff output
+
+    * Coverage report now includes snippets from the original source file
+
+9/1/13 v0.2.2
+
+    * Fixed a bug that would cause multiple coverage reports to
+      always show 100% coverage.
+
+    * Fixed bug when running diff cover during a merge conflict (Issue #41)
+
+    * Added --no-ext to git diff command
+    * Added Python 2.6 support
+
+8/9/13 v0.2.1
+	* Fix a bug in which function names and TODO: were not appearing in
+	   `diff-quality` reports.
+
+7/18/13 v0.2.0
+
+    * Add support for code quality metrics (pep8 and pylint for now).
+	Invoked via call to `diff-quality`
+
+    * Add support for multiple coverage XML inputs.
+
+    * Refactored diff report generator to use Jinja2 templates
+
+6/28/13 v0.1.4
+
+    * Fix bug in which adding then deleting lines would result in
+      incorrect lines included in the diff report.
+
+6/25/13 v0.1.3
+
+    * Fix a bug in which plus signs in the hunk line would cause a parser error
+
+6/17/13 v0.1.2
+
+    * Fix bug in which lines around a change were included in the report
+
+6/10/13 v0.1.1
+
+    * Compare with origin/master instead of master
+    * Includes staged and unstaged changes in report

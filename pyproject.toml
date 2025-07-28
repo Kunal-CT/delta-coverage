@@ -1,0 +1,175 @@
+[tool.poetry]
+name = "diff_cover"
+version = "9.6.0"
+description = "Run coverage and linting reports on diffs"
+authors = ["See Contributors"]
+homepage = "https://github.com/Bachmann1234/diff-cover"
+repository = "https://github.com/Bachmann1234/diff-cover"
+license = "Apache-2.0"
+readme = "README.rst"
+classifiers=[
+        "Development Status :: 5 - Production/Stable",
+        "Environment :: Console",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: Apache Software License",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
+        "Programming Language :: Python :: Implementation :: CPython",
+        "Topic :: Software Development :: Testing",
+        "Topic :: Software Development :: Quality Assurance",
+]
+packages = [
+    { include = "diff_cover" }
+]
+include = [
+    {path = 'templates/*.txt'},
+    {path = 'templates/*.html'},
+    {path = 'templates/*.css'},
+    {path = 'templates/*.md'},
+    {path = 'tests/*', format = 'sdist'},
+]
+
+[tool.poetry.scripts]
+diff-cover = 'diff_cover.diff_cover_tool:main'
+diff-quality = 'diff_cover.diff_quality_tool:main'
+
+[tool.poetry.dependencies]
+python = ">=3.9"
+Pygments = "^2.19.1"
+Jinja2 = ">=2.7.1"
+pluggy = ">=0.13.1,<2"
+chardet = ">=3.0.0"
+tomli = {version = ">=1.2.1", optional = true}
+
+[tool.poetry.group.dev.dependencies]
+pytest-cov = "^6.1.1"
+pytest-datadir = "^1.5.0"
+pytest-mock = "^3.14.0"
+pytest-xdist = "^3.6.1"
+pycodestyle = ">=2.9.1"
+flake8-pyproject = "^1.2.3"
+pyflakes = "^3.3.2"
+pylint = "^3.3.4"
+pylint-pytest = "^1.1.8"
+pydocstyle = "^6.1.1"
+black = "^25.1.0"
+isort = "^6.0.1"
+doc8 = "1.1.2"
+ruff = "^0.11.10"
+
+[tool.poetry.extras]
+toml = ["tomli"]
+
+[build-system]
+requires = ["poetry-core>=1.0.7"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py39']
+include = '\.pyi?$'
+exclude = "tests/fixtures/*|\\.venv/*"
+
+[tool.isort]
+profile = "black"
+extend_skip = "tests/fixtures/|\\.venv/"
+
+[tool.pylint.master]
+max-line-length = 100
+load-plugins = [
+    "pylint_pytest",
+]
+ignore = [
+    ".venv",
+    "tests/fixtures"
+]
+ignore-paths = ["tests/fixtures/.*"]
+
+[tool.pylint."messages control"]
+enable = ["all"]
+disable = [
+    # allow TODO comments
+    "fixme",
+    # allow disables
+    "locally-disabled",
+    "suppressed-message",
+    # covered by isort
+    "ungrouped-imports",
+    # allow classes and functions w/o docstring
+    "missing-docstring",
+    # hard number checks can be ignored, because they are covered in code reviews
+    "too-many-instance-attributes",
+    "too-many-arguments",
+    "too-many-locals",
+    "too-many-branches",
+    "too-few-public-methods",
+    "too-many-nested-blocks",
+    "too-many-public-methods",
+    # allow methods not to use self
+    "no-self-use",
+    # currently some code seems duplicated for pylint
+    "duplicate-code",
+    # we are a command line tool and don't want to show all internals
+    "raise-missing-from",
+]
+
+[tool.pylint.basic]
+good-names = [
+    "_",
+    "i",
+    "setUp",
+    "tearDown",
+    "e",
+    "ex",
+]
+no-docstring-rgx = "^_"
+
+[tool.flake8]
+max-line-length = 100
+exclude = [
+    ".venv",
+    "tests/fixtures"
+]
+ignore = [
+    "E501", # line too long
+    "W503", # line break before binary operator
+]
+
+[tool.coverage.run]
+branch = true
+relative_files = true
+parallel = true
+concurrency = ["multiprocessing"]
+source = ["diff_cover"]
+omit = ["./tests/*"]
+
+[tool.coverage.report]
+show_missing = true
+exclude_also = [
+    "if typing.TYPE_CHECKING:",
+    "if TYPE_CHECKING:",
+    "if __name__ == \"__main__\":",
+    "raise NotImplementedError",
+    "raise AssertionError",
+    "^\\s*pass\\s*$",
+]
+
+[tool.coverage.html]
+show_contexts = true
+skip_covered = false
+
+[tool.pytest.ini_options]
+addopts = "--strict-markers"
+xfail_strict = true
+markers = [
+    "disable_all_files_exist: disables the fixture patch_so_all_files_exist",
+]
+
+[tool.doc8]
+max_line_length = 120
